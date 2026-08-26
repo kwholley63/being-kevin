@@ -1,0 +1,7 @@
+baseURL = 'https://example.org/'
+locale = 'en-us'
+title = 'Being Kevin'
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'

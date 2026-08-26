@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ .Site.Title }}</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    {{ partial "header.html" . }}
+
+    <main>
+
+        <h2>Latest Posts</h2>
+
+        {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+
+        <article>
+
+            <h3>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+
+            <p class="meta">
+                Published on {{ .Date.Format "January 2, 2006" }}
+            </p>
+
+            <div>
+                {{ .Summary }}
+            </div>
+
+        </article>
+
+        {{ end }}
+
+    </main>
+
+    {{ partial "footer.html" . }}
+
+</body>
+
+</html>

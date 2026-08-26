@@ -1,0 +1,215 @@
+ /* =========================
+   Basic site setup
+   ========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+
+/* =========================
+   Header
+   ========================= */
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 40px 20px 30px;
+    text-align: center;
+}
+
+header h1 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 2.4rem;
+}
+header h1 a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+.tagline {
+    margin: 5px auto 20px;
+    color: #666;
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   Navigation
+   ========================= */
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 8px;
+    padding: 5px 8px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Main content
+   ========================= */
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   Articles
+   ========================= */
+
+article {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e1e1e1;
+}
+
+article h1 {
+    margin-top: 0;
+    font-size: 2.2rem;
+}
+
+article h2 {
+    margin-top: 35px;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+article p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   Links
+   ========================= */
+
+a {
+    color: #245a8d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Post information
+   ========================= */
+
+.meta {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    color: #777;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 30px 15px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    article {
+        padding: 20px;
+    }
+
+    article h1 {
+        font-size: 1.8rem;
+    }
+}
+/* Post Content */
+
+article h2 {
+    margin-top: 40px;
+    font-size: 1.7rem;
+}
+
+article h3 {
+    margin-top: 30px;
+    font-size: 1.35rem;
+}
+
+article ul,
+article ol {
+    margin-bottom: 25px;
+    padding-left: 30px;
+}
+
+article li {
+    margin-bottom: 8px;
+}
+
+article blockquote {
+    margin: 30px 0;
+    padding: 15px 25px;
+    border-left: 4px solid #245a8d;
+    background-color: #f5f5f5;
+    color: #555;
+    font-style: italic;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+}
+
+article strong {
+    font-weight: 700;
+}
+
+article em {
+    font-style: italic;
+}
+
+article a {
+    color: #245a8d;
+}
