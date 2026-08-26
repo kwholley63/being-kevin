@@ -7,7 +7,7 @@
 
     <title>Blog - {{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             <p class="meta">
                 Category:
                 {{ range . }}
-                <a href="/categories/{{ . | urlize }}/">{{ . }}</a>
+                <a href="{{ printf "/categories/%s/" (. | urlize) | relURL }}"> . }}</a>
                 {{ end }}
             </p>
             {{ end }}
@@ -52,7 +52,7 @@
             <p class="meta">
                 Tags:
                 {{ range . }}
-                <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">
                 {{ end }}
             </p>
             {{ end }}
