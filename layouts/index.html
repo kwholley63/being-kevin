@@ -16,27 +16,42 @@
 
     <main>
 
-        <h2>Latest Posts</h2>
+        <section class="home-hero">
 
-        {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            <img src="{{ "images/Being-Kevin.png" | relURL }}"
+                 alt="Being Kevin">
 
-        <article>
+            <h2>Latest Posts</h2>
 
-            <h3>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h3>
+        </section>
 
-            <p class="meta">
-                Published on {{ .Date.Format "January 2, 2006" }}
-            </p>
+        <section class="post-list">
 
-            <div>
-                {{ .Summary }}
-            </div>
+            {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
 
-        </article>
+            <article>
 
-        {{ end }}
+                <h3>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+
+                <p class="meta">
+                    Published on {{ .Date.Format "January 2, 2006" }}
+                </p>
+
+                <div>
+                    {{ .Summary }}
+                </div>
+
+                <p class="read-more">
+                    <a href="{{ .RelPermalink }}">Read More →</a>
+                </p>
+
+            </article>
+
+            {{ end }}
+
+        </section>
 
     </main>
 

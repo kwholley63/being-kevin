@@ -18,25 +18,37 @@
 
         <h1>Archives</h1>
 
-        {{ range .Site.RegularPages.GroupByDate "2006" }}
+        <p class="archive-intro">
+            Browse the Being Kevin archives by year.
+        </p>
+
+        {{ $posts := where .Site.RegularPages "Section" "posts" }}
+
+        {{ range $posts.GroupByDate "2006" }}
+
+        <section class="archive-year">
 
             <h2>{{ .Key }}</h2>
 
-            {{ range .Pages }}
+            <div class="archive-list">
 
-            <article>
+                {{ range .Pages }}
 
-                <h3>
+                <div class="archive-item">
+
+                    <span class="archive-date">
+                        {{ .Date.Format "Jan 2" }}
+                    </span>
+
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h3>
 
-                <p class="meta">
-                    {{ .Date.Format "January 2, 2006" }}
-                </p>
+                </div>
 
-            </article>
+                {{ end }}
 
-            {{ end }}
+            </div>
+
+        </section>
 
         {{ end }}
 

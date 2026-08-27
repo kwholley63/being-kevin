@@ -18,30 +18,42 @@
 
         <article>
 
-            <h1>{{ .Title }}</h1>
+            {{ if .IsPage }}
+                {{ if eq .File.Path "about.md" }}
 
-            <p class="meta">
-                Published on {{ .Date.Format "January 2, 2006" }}
-            </p>
+                    {{ .Content }}
 
-            {{ with .Params.tags }}
-            <p class="meta">
-                Tags:
-                {{ range . }}
-                    <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                {{ else }}
+
+                    <h1>{{ .Title }}</h1>
+
+                    <p class="meta">
+                        Published on {{ .Date.Format "January 2, 2006" }}
+                    </p>
+
+                    {{ with .Params.tags }}
+                    <p class="meta">
+                        Tags:
+                        {{ range . }}
+                            <a href="{{ "tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+                        {{ end }}
+                    </p>
+                    {{ end }}
+
+                    <div>
+                        {{ .Content }}
+                    </div>
+
                 {{ end }}
-            </p>
             {{ end }}
-
-            <div>
-                {{ .Content }}
-            </div>
 
         </article>
 
+        {{ if ne .File.Path "about.md" }}
         <p>
-            <a href="/posts/">&larr; Back to Blog</a>
+            <a href="{{ "posts/" | relURL }}">&larr; Back to Blog</a>
         </p>
+        {{ end }}
 
     </main>
 
