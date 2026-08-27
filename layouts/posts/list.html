@@ -7,65 +7,89 @@
 
     <title>Blog - {{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=2">
 </head>
 
 <body>
 
     {{ partial "header.html" . }}
 
-    <main>
+    <div class="blog-page">
 
-        <h1>Blog</h1>
+        <main>
 
-        <p>
-            Welcome to Being Kevin. Here you'll find my latest stories,
-            opinions, observations, and whatever else I decide to write about.
-        </p>
+            <h1>Blog</h1>
 
-        {{ range .Pages }}
-
-        <article>
-
-            <h2>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-
-            <p class="meta">
-                Published on {{ .Date.Format "January 2, 2006" }}
+            <p class="blog-intro">
+                Welcome to Being Kevin. Here you'll find my latest stories,
+                opinions, observations, and whatever else I decide to write about.
             </p>
 
-            {{ with .Params.categories }}
-            <p class="meta">
-                Category:
-                {{ range . }}
-                <a href="{{ printf "/categories/%s/" (. | urlize) | relURL }}"> . }}</a>
+            {{ range .Pages }}
+
+            <article class="blog-post">
+
+                {{ $image := "" }}
+
+                {{ with .Params.image }}
+                    {{ $image = . }}
+                {{ else }}
+                    {{ with index .Params.categories 0 }}
+                        {{ $image = index site.Params.postImages . }}
+                    {{ end }}
                 {{ end }}
-            </p>
+
+                {{ with $image }}
+                <div class="post-list-image">
+                    <img
+                        src="{{ . | relURL }}"
+                        alt="{{ $.Title }}"
+                        width="240"
+                        style="width: 240px; max-width: 70%; height: auto;">
+                </div>
+                {{ end }}
+
+                <h2>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+
+                <p class="meta">
+                    Published on {{ .Date.Format "January 2, 2006" }}
+                </p>
+
+                {{ with .Params.categories }}
+                <p class="meta">
+                    Category:
+                    {{ range . }}
+                        <a href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>
+                    {{ end }}
+                </p>
+                {{ end }}
+
+                <p>
+                    {{ .Summary }}
+                </p>
+
+                {{ with .Params.tags }}
+                <p class="meta">
+                    Tags:
+                    {{ range . }}
+                        <a href="{{ printf "tags/%s/" (. | urlize) | relURL }}">{{ . }}</a>
+                    {{ end }}
+                </p>
+                {{ end }}
+
+                <p>
+                    <a href="{{ .RelPermalink }}">Read More →</a>
+                </p>
+
+            </article>
+
             {{ end }}
 
-            <p>
-                {{ .Summary }}
-            </p>
+        </main>
 
-            {{ with .Params.tags }}
-            <p class="meta">
-                Tags:
-                {{ range . }}
-                <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">
-                {{ end }}
-            </p>
-            {{ end }}
-
-            <p>
-                <a href="{{ .RelPermalink }}">Read More →</a>
-            </p>
-
-        </article>
-
-        {{ end }}
-
-    </main>
+    </div>
 
     {{ partial "footer.html" . }}
 

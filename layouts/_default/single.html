@@ -18,33 +18,49 @@
 
         <article>
 
-            {{ if .IsPage }}
-                {{ if eq .File.Path "about.md" }}
+            {{ if eq .File.Path "about.md" }}
 
-                    {{ .Content }}
+                {{ .Content }}
 
+            {{ else }}
+
+                <h1>{{ .Title }}</h1>
+
+                <p class="meta">
+                    Published on {{ .Date.Format "January 2, 2006" }}
+                </p>
+
+                {{/* Determine post image */}}
+
+                {{ $image := "" }}
+
+                {{ with .Params.image }}
+                    {{ $image = . }}
                 {{ else }}
-
-                    <h1>{{ .Title }}</h1>
-
-                    <p class="meta">
-                        Published on {{ .Date.Format "January 2, 2006" }}
-                    </p>
-
-                    {{ with .Params.tags }}
-                    <p class="meta">
-                        Tags:
-                        {{ range . }}
-                            <a href="{{ "tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
-                        {{ end }}
-                    </p>
+                    {{ with index .Params.categories 0 }}
+                        {{ $image = index site.Params.postImages . }}
                     {{ end }}
-
-                    <div>
-                        {{ .Content }}
-                    </div>
-
                 {{ end }}
+
+                {{ with $image }}
+                <div class="post-image">
+                    <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+                </div>
+                {{ end }}
+
+                {{ with .Params.tags }}
+                <p class="meta">
+                    Tags:
+                    {{ range . }}
+                        <a href="{{ "tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+                    {{ end }}
+                </p>
+                {{ end }}
+
+                <div>
+                    {{ .Content }}
+                </div>
+
             {{ end }}
 
         </article>

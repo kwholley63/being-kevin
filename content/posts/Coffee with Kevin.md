@@ -8,7 +8,7 @@ tags:
   - personal-reflection
   - social-media
 categories:
-  - Personal
+  - Coffee With Kevin
 ---
 Coffee with Kevin: Sometimes the Best Reply Is No Reply
 I've mentioned before that I'm not much of a fan of social media. I don't even like the term. I really only pay attention to two platforms. LinkedIn lets me keep up with technology, former coworkers, and occasionally it sends a few readers to my blog. Instagram is mostly for funny videos that make me laugh.

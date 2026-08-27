@@ -4,7 +4,7 @@ date = "2026-08-26"
 draft = false
 description = "What seems like a basic skill to one person can be completely unfamiliar to another. It all depends on experience, culture, and environment."
 summary = "What seems like a basic skill to one person can be completely unfamiliar to another. It all depends on experience, culture, and environment."
-categories = ["Personal Reflection"]
+categories = ["Thinking Out Loud"]
 tags = ["Daily Writing Prompt", "Life Skills", "Personal Reflection", "Rio de Janeiro", "Common Sense"]
 +++
 
