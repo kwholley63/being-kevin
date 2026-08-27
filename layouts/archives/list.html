@@ -7,7 +7,9 @@
 
     <title>Archives - {{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=3">
+    {{ partial "seo.html" . }}
+
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=4">
 </head>
 
 <body>

@@ -7,42 +7,56 @@
 
     <title>{{ .Title }} - {{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=3">
+    {{ partial "seo.html" . }}
+
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=4">
 </head>
 
 <body>
 
     {{ partial "header.html" . }}
 
-    <main>
+    <div class="tag-page">
 
-        <h1>Posts tagged "{{ .Title }}"</h1>
+        <main>
 
-        {{ range .Pages }}
+            <h1>Posts tagged "{{ .Title }}"</h1>
 
-        <article>
-
-            <h2>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-
-            <p class="meta">
-                Published on {{ .Date.Format "January 2, 2006" }}
+            <p class="tag-intro">
+                Posts tagged with "{{ .Title }}".
             </p>
 
-            <p>
-                {{ .Summary }}
+            {{ range .Pages }}
+
+            <article class="tag-post">
+
+                <h2>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+
+                <p class="meta">
+                    Published on {{ .Date.Format "January 2, 2006" }}
+                </p>
+
+                <p>
+                    {{ .Summary }}
+                </p>
+
+                <p class="read-more">
+                    <a href="{{ .RelPermalink }}">Read More →</a>
+                </p>
+
+            </article>
+
+            {{ end }}
+
+            <p class="tag-back">
+                <a href="{{ "/" | relURL }}">← Back to Home</a>
             </p>
 
-        </article>
+        </main>
 
-        {{ end }}
-
-        <p>
-            <a href="/">&larr; Back to Home</a>
-        </p>
-
-    </main>
+    </div>
 
     {{ partial "footer.html" . }}
 

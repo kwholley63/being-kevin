@@ -7,26 +7,52 @@
 
     <title>{{ .Title }} - {{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=3">
+    {{ partial "seo.html" . }}
+
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=4">
 </head>
 
 <body>
 
     {{ partial "header.html" . }}
 
-    <main>
+    <div class="taxonomy-page">
 
-        <h1>{{ .Title }}</h1>
+        <main>
 
-        <ul>
+            <h1>{{ .Title }}</h1>
+
+            <p class="taxonomy-intro">
+                Posts in the {{ .Title }} category.
+            </p>
+
             {{ range .Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            </li>
-            {{ end }}
-        </ul>
 
-    </main>
+            <article class="taxonomy-post">
+
+                <h2>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+
+                <p class="meta">
+                    Published on {{ .Date.Format "January 2, 2006" }}
+                </p>
+
+                <p>
+                    {{ .Summary }}
+                </p>
+
+                <p class="read-more">
+                    <a href="{{ .RelPermalink }}">Read More →</a>
+                </p>
+
+            </article>
+
+            {{ end }}
+
+        </main>
+
+    </div>
 
     {{ partial "footer.html" . }}
 

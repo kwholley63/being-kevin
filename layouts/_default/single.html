@@ -7,7 +7,9 @@
 
     <title>{{ .Title }} - {{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=3">
+    {{ partial "seo.html" . }}
+
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=4">
 </head>
 
 <body>
@@ -67,7 +69,7 @@
 
         {{ if ne .File.Path "about.md" }}
         <p>
-            <a href="{{ "posts/" | relURL }}">&larr; Back to Blog</a>
+            <a href="{{ "posts/" | relURL }}" style="color: #ffffff !important;">&larr; Back to Blog</a>
         </p>
         {{ end }}
 

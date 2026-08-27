@@ -17,3 +17,4 @@ title = 'Being Kevin'
   "Weekly Picks" = "images/Weekly-Picks.jpg"
   "Weekly Roundup" = "images/Weekly-RoundUp.jpg"
   "Personal" = "images/Coffee-With-Kevin.png"
+  enableRobotsTXT = true
