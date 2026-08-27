@@ -15,7 +15,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #404040;
     color: #333;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 18px;
@@ -379,4 +379,72 @@ footer p {
     background-color: #303030 !important;
     padding: 45px 0 55px;
 }
+}
+/* =========================
+   Dark Page Text
+   ========================= */
+
+/* Homepage */
+main > h2 {
+    color: #ffffff;
+}
+
+/* Archives */
+.archive-list,
+.archive-list h2,
+.archive-list p {
+    color: #ffffff;
+}
+
+.archive-list a {
+    color: #8ec5ff;
+}
+/* =========================
+   Home and Archives
+   ========================= */
+
+.home-hero h2 {
+    color: #ffffff;
+}
+
+/* Archives */
+
+.archives-page h1 {
+    color: #ffffff;
+}
+
+.archive-intro {
+    color: #f0f0f0;
+}
+
+.archive-year {
+    margin-bottom: 40px;
+}
+
+.archive-year h2 {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+}
+
+.archive-list {
+    border-top: 1px solid #777777;
+}
+
+.archive-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #777777;
+}
+
+.archive-date {
+    display: inline-block;
+    width: 70px;
+    color: #d0d0d0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+}
+
+.archive-item a {
+    color: #9ecbff;
 }
