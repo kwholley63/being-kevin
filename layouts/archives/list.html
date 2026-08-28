@@ -20,9 +20,11 @@
 
         <h1>Archives</h1>
 
+            <section class="page-hero">
+                <img src="{{ "images/Gringo.png" | relURL }}" alt="Gringo">
+            </section>
+
         <p class="archive-intro">
-            Browse the Being Kevin archives by year.
-        </p>
 
         {{ $posts := where .Site.RegularPages "Section" "posts" }}
 

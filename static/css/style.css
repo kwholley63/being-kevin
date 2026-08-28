@@ -118,7 +118,17 @@ main > h2 {
     font-size: 2rem;
     color: #ffffff;
 }
+.page-hero {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
 
+.page-hero img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: inline-block;
+}
 /* =========================
    General Articles
    ========================= */

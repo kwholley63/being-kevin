@@ -22,6 +22,10 @@
 
             {{ if eq .File.Path "about.md" }}
 
+                <section class="page-hero">
+                    <img src="{{ "images/Being-Kevin.png" | relURL }}" alt="Being Kevin">
+                </section>
+
                 {{ .Content }}
 
             {{ else }}
