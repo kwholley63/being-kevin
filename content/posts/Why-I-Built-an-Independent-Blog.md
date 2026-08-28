@@ -29,7 +29,7 @@ Actually, quite the opposite. WordPress is incredibly powerful, and I'm still us
 
 I just wanted to know what was on the other side of the fence.
 
-It Started With a Google Search
+## It Started With a Google Search
 The whole thing started with a simple question:
 
 Where do blogs get hosted besides WordPress or Blogger?
@@ -60,7 +60,7 @@ But there was still plenty to learn.
 
 And that's really the point of this site.
 
-What I Wanted to Learn
+## What I Wanted to Learn
 When you use a platform like WordPress, a tremendous amount happens behind the scenes for you.
 
 That's convenient.
