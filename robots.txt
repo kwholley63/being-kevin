@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kwholley63.github.io/being-kevin/sitemap.xml
